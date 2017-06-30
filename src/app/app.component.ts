@@ -1,13 +1,13 @@
     import { Component, OnInit } from '@angular/core';
-     
+
     import { Hero } from './hero';
     import { HeroService } from './hero.service';
-     
+
     @Component({
       selector: 'my-app',
       template: `
         <h1>{{title}}</h1>
-        <h2>My Heroes</h2>
+        <h2>Zin's Heroes</h2>
         <ul class="heroes">
           <li *ngFor="let hero of heroes"
             [class.selected]="hero === selectedHero"
@@ -72,17 +72,17 @@
       title = 'Tour of Heroes';
       heroes: Hero[];
       selectedHero: Hero;
-     
+
       constructor(private heroService: HeroService) { }
-     
+
       getHeroes(): void {
         this.heroService.getHeroesSlowly().then(heroes => this.heroes = heroes);
       }
-     
+
       ngOnInit(): void {
         this.getHeroes();
       }
-     
+
       onSelect(hero: Hero): void {
         this.selectedHero = hero;
       }
