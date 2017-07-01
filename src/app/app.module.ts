@@ -1,12 +1,35 @@
-import { NgModule }      from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule }   from '@angular/forms';
-import { AppComponent }  from './app.component';
-import { HeroDetailComponent } from './hero-detail.component';
+    import { NgModule }       from '@angular/core';
+    import { BrowserModule }  from '@angular/platform-browser';
+    import { AppRoutingModule }     from './app-routing.module';
+    import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+    import {MdButtonModule, MdCheckboxModule} from '@angular/material';
 
-@NgModule({
-  imports:      [ BrowserModule, FormsModule ],
-  declarations: [ AppComponent, HeroDetailComponent ],
-  bootstrap:    [ AppComponent ]
-})
-export class AppModule { }
+    import { FormsModule }    from '@angular/forms';
+
+    import { AppComponent }         from './app.component';
+    import { DashboardComponent }   from './dashboard.component';
+    import { HeroDetailComponent }  from './hero-detail.component';
+    import { HeroesComponent }      from './heroes.component';
+    import { HeroService }          from './hero.service';
+    import 'hammerjs';
+
+
+    @NgModule({
+      imports: [
+        BrowserModule,
+        FormsModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MdButtonModule,
+        MdCheckboxModule,
+      ],
+      declarations: [
+        AppComponent,
+        DashboardComponent,
+        HeroDetailComponent,
+        HeroesComponent
+      ],
+      providers: [ HeroService ],
+      bootstrap: [ AppComponent ]
+    })
+    export class AppModule { }
