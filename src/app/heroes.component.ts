@@ -2,11 +2,9 @@
     import { Router } from '@angular/router';
     import { Hero } from './hero';
     import { HeroService } from './hero.service';
-
-
     @Component({
       selector: 'my-heroes',
-      templateUrl: './heroes.component.html',
+      templateUrl: `./heroes.component.html`,
       styles: [`
             .selected {
               background-color: #CFD8DC !important;

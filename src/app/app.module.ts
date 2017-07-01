@@ -12,7 +12,7 @@
     import { HeroesComponent }      from './heroes.component';
     import { HeroService }          from './hero.service';
     import 'hammerjs';
-
+    import { MenuComponent } from './menu.component';
 
     @NgModule({
       imports: [
@@ -27,7 +27,8 @@
         AppComponent,
         DashboardComponent,
         HeroDetailComponent,
-        HeroesComponent
+        HeroesComponent,
+        MenuComponent
       ],
       providers: [ HeroService ],
       bootstrap: [ AppComponent ]
