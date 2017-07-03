@@ -13,6 +13,7 @@
     import { HeroService }          from './hero.service';
     import 'hammerjs';
     import { MenuComponent } from './menu.component';
+    import { FlexLayoutModule } from "@angular/flex-layout";
 
     @NgModule({
       imports: [
@@ -22,6 +23,7 @@
         BrowserAnimationsModule,
         MdButtonModule,
         MdCheckboxModule,
+        FlexLayoutModule
       ],
       declarations: [
         AppComponent,

@@ -9,9 +9,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
+var router_1 = require("@angular/router");
+var heroes_component_1 = require("./heroes.component");
+var hero_detail_component_1 = require("./hero-detail.component");
 var hero_service_1 = require("./hero.service");
 var DashboardComponent = (function () {
-    function DashboardComponent(heroService) {
+    function DashboardComponent(router, heroService) {
+        this.router = router;
         this.heroService = heroService;
         this.heroes = [];
     }
@@ -20,14 +24,24 @@ var DashboardComponent = (function () {
         this.heroService.getHeroes()
             .then(function (heroes) { return _this.heroes = heroes.slice(1, 5); });
     };
+    DashboardComponent.prototype.onNotify = function (message) {
+        this.selectedHero = message;
+    };
+    DashboardComponent.prototype.gotoDetail = function () {
+        this.showDetail = true;
+        console.log(this.showDetail);
+        //this.router.navigate(['/detail', this.selectedHero.id]);
+    };
     return DashboardComponent;
 }());
 DashboardComponent = __decorate([
     core_1.Component({
         selector: 'my-dashboard',
-        templateUrl: './dashboard.component.html',
+        templateUrl: "./app.component.html",
+        directives: [heroes_component_1.HeroesComponent, hero_detail_component_1.HeroDetailComponent]
     }),
-    __metadata("design:paramtypes", [hero_service_1.HeroService])
+    __metadata("design:paramtypes", [router_1.Router,
+        hero_service_1.HeroService])
 ], DashboardComponent);
 exports.DashboardComponent = DashboardComponent;
 //# sourceMappingURL=dashboard.component.js.map

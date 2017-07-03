@@ -1,0 +1,35 @@
+<div class="container"
+     fxLayout
+     fxLayout.xs="column"
+     fxLayoutAlign="center"
+     fxLayoutGap="10px"
+     fxLayoutGap.xs="0">
+  <div class="item item-1" fxFlex="35%">
+    <my-heroes (notify)='onNotify($event)'></my-heroes>
+  </div>
+  <!--<div class="item item-2" fxFlex="65%" fxFlexOrder="3">Item 2</div>-->
+  <div class="item item-2" fxFlex="65%">
+    <div *ngIf="selectedHero">
+      <h2>
+        {{selectedHero.name | uppercase}} is my hero
+      </h2>
+      <button (click)="gotoDetail()">View Details</button>
+      <!--<button (click)="showDetail = !showDetail">View Details</button>-->
+
+      <div *ngIf="showDetail">
+        <hero-detail [hero] = 'selectedHero'></hero-detail>
+      </div>
+      <!--<button (click)="gotoDetail()">View Details</button>-->
+    </div>
+  </div>
+</div>
+
+<!--<div class="container"-->
+     <!--fxLayout-->
+     <!--fxLayout.xs="column"-->
+     <!--fxLayoutAlign="center"-->
+     <!--fxLayoutGap="10px"-->
+     <!--fxLayoutGap.xs="0">-->
+  <!--<div class="item item-4" fxFlex fxFlexOffset="50px"  fxFlexOffset.xs="0">Item 4</div>-->
+  <!--<div class="item item-5" fxFlex="200px">Item 5</div>-->
+<!--</div>-->

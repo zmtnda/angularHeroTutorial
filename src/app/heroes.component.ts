@@ -1,4 +1,4 @@
-    import { Component, OnInit } from '@angular/core';
+    import { Component, OnInit, Output, EventEmitter  } from '@angular/core';
     import { Router } from '@angular/router';
     import { Hero } from './hero';
     import { HeroService } from './hero.service';
@@ -13,6 +13,11 @@
             .heroes {
               margin: 0 0 2em 0;
               list-style-type: none;
+              right: auto;
+              top: auto;
+              left: 0;
+              bottom: 0;
+              width: 20%;
               padding: 0;
               width: 15em;
             }
@@ -69,6 +74,7 @@
 
     })
     export class HeroesComponent implements OnInit {
+    @Output() notify: EventEmitter<Hero> = new EventEmitter<Hero>();
       heroes: Hero[];
       selectedHero: Hero;
 
@@ -85,11 +91,13 @@
       }
 
       onSelect(hero: Hero): void {
-        this.selectedHero = hero;
+      console.log(hero.id);
+      this.selectedHero = hero;
+      this.notify.emit(this.selectedHero);
       }
 
-      gotoDetail(): void {
-        this.router.navigate(['/detail', this.selectedHero.id]);
-      }
+      //gotoDetail(): void {
+      //  this.router.navigate(['/detail', this.selectedHero.id]);
+      //}
 
     }
