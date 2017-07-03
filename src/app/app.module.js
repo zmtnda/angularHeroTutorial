@@ -18,6 +18,7 @@ var heroes_component_1 = require("./heroes.component");
 var hero_service_1 = require("./hero.service");
 require("hammerjs");
 var menu_component_1 = require("./menu.component");
+var flex_layout_1 = require("@angular/flex-layout");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -32,6 +33,7 @@ AppModule = __decorate([
             animations_1.BrowserAnimationsModule,
             material_1.MdButtonModule,
             material_1.MdCheckboxModule,
+            flex_layout_1.FlexLayoutModule
         ],
         declarations: [
             app_component_1.AppComponent,

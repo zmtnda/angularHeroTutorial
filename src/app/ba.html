@@ -1,0 +1,21 @@
+<button md-icon-button (click)="sidenav.toggle()">
+  <md-icon class="md-24" >menu</md-icon>
+</button>
+<div class="parent">
+  <h2>My Heroes</h2>
+  <!--<menu-component></menu-component>-->
+</div>
+
+<ul class="heroes">
+  <li *ngFor="let hero of heroes"
+      [class.selected]="hero === selectedHero"
+      (click)="onSelect(hero)">
+    <span class="badge">{{hero.id}}</span> {{hero.name}}
+  </li>
+</ul>
+<!--<div *ngIf="selectedHero">-->
+<!--<h2>-->
+<!--{{selectedHero.name | uppercase}} is my hero-->
+<!--</h2>-->
+<!--&lt;!&ndash;<button (click)="gotoDetail()">View Details</button>&ndash;&gt;-->
+<!--</div>-->

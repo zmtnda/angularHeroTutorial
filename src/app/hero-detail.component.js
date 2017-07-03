@@ -19,12 +19,11 @@ var HeroDetailComponent = (function () {
         this.route = route;
         this.location = location;
     }
-    HeroDetailComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.route.paramMap
-            .switchMap(function (params) { return _this.heroService.getHero(+params.get('id')); })
-            .subscribe(function (hero) { return _this.hero = hero; });
-    };
+    //ngOnInit(): void {
+    //this.route.paramMap
+    //.switchMap((params: ParamMap) => this.heroService.getHero(+params.get('id')))
+    //.subscribe(hero => this.hero = hero);
+    //}
     HeroDetailComponent.prototype.goBack = function () {
         this.location.back();
     };
@@ -37,7 +36,8 @@ __decorate([
 HeroDetailComponent = __decorate([
     core_1.Component({
         selector: 'hero-detail',
-        templateUrl: './hero-detail.component.html'
+        templateUrl: "./hero-detail.component.html",
+        style: ["\n        .detail {\n                      margin: 0 0 2em 0;\n                      list-style-type: none;\n                      right: auto;\n                      top: auto;\n                      left: auto;\n                      bottom: 0;\n                      width: 80%;\n                      padding: 0;\n                      width: 15em;\n                    }\n      "]
     }),
     __metadata("design:paramtypes", [hero_service_1.HeroService,
         router_1.ActivatedRoute,
