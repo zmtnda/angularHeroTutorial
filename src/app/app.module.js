@@ -5,11 +5,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var app_routing_module_1 = require("./app-routing.module");
 var animations_1 = require("@angular/platform-browser/animations");
-var material_1 = require("@angular/material");
 var forms_1 = require("@angular/forms");
 var app_component_1 = require("./app.component");
 var dashboard_component_1 = require("./dashboard.component");
@@ -19,6 +19,8 @@ var hero_service_1 = require("./hero.service");
 require("hammerjs");
 var menu_component_1 = require("./menu.component");
 var flex_layout_1 = require("@angular/flex-layout");
+var material_1 = require("@angular/material");
+// import { AngularMaterialModule} from '../ngmaterial.module';
 var AppModule = (function () {
     function AppModule() {
     }
@@ -31,9 +33,9 @@ AppModule = __decorate([
             forms_1.FormsModule,
             app_routing_module_1.AppRoutingModule,
             animations_1.BrowserAnimationsModule,
-            material_1.MdButtonModule,
-            material_1.MdCheckboxModule,
-            flex_layout_1.FlexLayoutModule
+            flex_layout_1.FlexLayoutModule,
+            material_1.MdButtonModule, material_1.MdCheckboxModule
+            // AngularMaterialModule
         ],
         declarations: [
             app_component_1.AppComponent,

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
 selector: 'menu-component',
-  style : [`
+  styles : [`
   .child {
     background : #aaa;
     padding: 10px;

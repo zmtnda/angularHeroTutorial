@@ -10,13 +10,12 @@ import { HeroService } from './hero.service';
 @Component({
   selector: 'my-dashboard',
   templateUrl: `./app.component.html`,
-  directives:[ HeroesComponent, HeroDetailComponent ]
 })
 
 export class DashboardComponent implements OnInit {
   heroes: Hero[] = [];
   selectedHero: Hero;
-  showDetail: false;
+  showDetail: Boolean;
   constructor(
         private router: Router,
         private heroService: HeroService) { }

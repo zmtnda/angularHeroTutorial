@@ -2,8 +2,6 @@
     import { BrowserModule }  from '@angular/platform-browser';
     import { AppRoutingModule }     from './app-routing.module';
     import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-    import {MdButtonModule, MdCheckboxModule} from '@angular/material';
-
     import { FormsModule }    from '@angular/forms';
 
     import { AppComponent }         from './app.component';
@@ -14,6 +12,8 @@
     import 'hammerjs';
     import { MenuComponent } from './menu.component';
     import { FlexLayoutModule } from "@angular/flex-layout";
+    import {MdButtonModule, MdCheckboxModule} from '@angular/material';
+    // import { AngularMaterialModule} from '../ngmaterial.module';
 
     @NgModule({
       imports: [
@@ -21,9 +21,9 @@
         FormsModule,
         AppRoutingModule,
         BrowserAnimationsModule,
-        MdButtonModule,
-        MdCheckboxModule,
-        FlexLayoutModule
+        FlexLayoutModule,
+        MdButtonModule, MdCheckboxModule
+        // AngularMaterialModule
       ],
       declarations: [
         AppComponent,

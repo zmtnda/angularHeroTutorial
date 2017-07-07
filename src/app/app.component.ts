@@ -10,7 +10,7 @@ import { Component } from '@angular/core';
             </nav>
                <router-outlet></router-outlet>
             `,
-  style: [`
+  styles: [`
               h1 {
                 font-size: 1.2em;
                 color: #999;
