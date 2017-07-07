@@ -7,7 +7,7 @@ import { HeroService } from './hero.service';
     @Component({
       selector: 'hero-detail',
       templateUrl: `./hero-detail.component.html`,
-      style: [`
+      styles: [`
         .detail {
                       margin: 0 0 2em 0;
                       list-style-type: none;
